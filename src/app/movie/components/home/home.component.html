@@ -1,0 +1,18 @@
+<div class="container">
+
+  <mat-card *ngFor="let movie of movies">
+    <mat-card-header>
+      <mat-card-title>{{ movie.room | room  }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="{{ movie.poster }}">
+    <mat-card-content>
+      <p>
+        {{ movie.synopsis }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+
+
+</div>
+

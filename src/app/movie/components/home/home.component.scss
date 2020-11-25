@@ -19,3 +19,18 @@ $img-background: './../../../../assets/img/pexels-pixabay-33129.jpg';
   }
 
 }
+
+.box {
+
+
+
+  height: 100%;
+  margin: 0px;
+  background-image: url($img-background);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+}

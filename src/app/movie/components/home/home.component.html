@@ -4,7 +4,12 @@
     <mat-card-header>
       <mat-card-title>{{ movie.room | room  }}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image src="{{ movie.poster }}">
+
+    <a [routerLink]="['/movie/', movie.id ]">
+      <img mat-card-image src="{{ movie.poster }}">
+    </a>
+
+
     <mat-card-content>
       <p>
         {{ movie.title }}

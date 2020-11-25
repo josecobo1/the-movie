@@ -1,1 +1,44 @@
-<p>my-movie works!</p>
+<div class="top">
+  <h2>{{ movie?.room | room}}</h2>
+  <h1>{{ movie?.title }}</h1>
+</div>
+
+  <div class="container">
+
+
+  <div class="left">
+    <img src="{{ movie?.poster }}">
+  </div>
+
+  <div class="right">
+
+    <div class="feature">
+      <p class="feature-title">Genres: </p> <p>{{ movie?.genres }}</p>
+    </div>
+
+    <div class="feature">
+      <p class="feature-title">Year: </p> <p>{{ movie?.year }}</p>
+    </div>
+
+    <div class="feature">
+      <p class="feature-title">Director: </p> <p>{{ movie?.director }}</p>
+    </div>
+
+    <div class="feature">
+      <p class="feature-title">Actors: </p> <p>{{ movie?.actors }}</p>
+    </div>
+
+    <div class="feature">
+      <p class="feature-title">Schedule: </p> <p>{{ movie?.hours }}</p>
+    </div>
+
+    <div class="feature">
+      <p class="feature-title">Synopsis: </p> <p>{{ movie?.synopsis }}</p>
+    </div>
+
+  </div>
+
+
+</div>
+
+<button mat-raised-button [routerLink]="['/home']">Inicio</button>

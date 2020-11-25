@@ -9,21 +9,24 @@ import { Movie } from '../interfaces/movie';
 })
 export class MovieService {
 
-  url = environment.URL;
+  private _url = environment.URL;
 
   constructor(private http: HttpClient) { }
 
   // Recupera todas las peliculas de la API
   getMovies$(): Observable<Movie[]>{
 
-    return this.http.get<Movie[]>(this.url);
+    return this.http.get<Movie[]>(this._url);
 
   }
 
 
-
   // Recuper 1 pelicula por id de la API
-  // getMovies(id)
+  getMovie$(id: string): Observable<Movie> {
+
+    return this.http.get<Movie>(`${this._url}${id}`);
+
+  }
 
 
 }

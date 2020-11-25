@@ -1,0 +1,57 @@
+.top {
+  margin-left: 7%;
+  h2 {
+    display: inline;
+    color: grey;
+  }
+
+  h1 {
+    display: inline;
+    margin-left: 20px;
+    border: solid yellow 2px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: wrap;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  border: solid red 1px;
+
+  .right {
+    border: solid green 1px;
+    width: 40%;
+
+    .feature {
+      display: block;
+
+      .feature-title {
+        color: grey;
+        float: left;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .left {
+    border: solid blue 1px;
+    width: 40%;
+    img {
+      max-width: 60%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+
+
+}
+
+button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}

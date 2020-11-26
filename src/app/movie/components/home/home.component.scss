@@ -1,39 +1,44 @@
-$img-background: './../../../../assets/img/pexels-pixabay-33129.jpg';
-html, body {
-  margin: 0;
-  padding: 0;
-}
+$img-background: "./../../../../assets/img/pexels-pixabay-33129.jpg";
+
 .container {
-  // background-image: url($img-background);
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-size: cover;
-  // //height: 100%;
-  // width: 100%;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: baseline;
 
-  mat-card {
-    max-width: 20%;
-    margin: 50px;
-    display: inline;
-  }
-
-}
-
-.box {
-
-
-
-  height: 100%;
-  margin: 0px;
   background-image: url($img-background);
-
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
+
+  .movie{
+
+    display: inline;
+    margin: 10px;
+
+    border: solid 2px red;
+
+    width: 35%;
+
+    text-align: center;
+
+
+    img {
+
+      margin: 3%;
+      display: inline;
+      width: 60%;
+      border: solid 2px blue;
+
+    }
+
+    h3{
+      display: block;
+      background-color: white;
+    }
+
+  }
 
 }

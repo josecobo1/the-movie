@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 import { MovieService } from './../../services/movie.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Movie } from '../../interfaces/movie';
 
 @Component({
@@ -8,7 +8,7 @@ import { Movie } from '../../interfaces/movie';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   movies: Movie[];
   private subsribe: Subscription;
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     this.subsribe = this.movieService.getMovies$().subscribe(movies => this.movies = movies);
   }
 
-  onOnDestroy(): void {
+  ngOnDestroy(): void {
     this.subsribe.unsubscribe();
   }
 

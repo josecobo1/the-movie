@@ -1,7 +1,7 @@
 import { Observable, Subscription } from 'rxjs';
 import { MovieService } from './../../services/movie.service';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Movie } from '../../interfaces/movie';
 
 @Component({
@@ -9,7 +9,7 @@ import { Movie } from '../../interfaces/movie';
   templateUrl: './my-movie.component.html',
   styleUrls: ['./my-movie.component.scss']
 })
-export class MyMovieComponent implements OnInit {
+export class MyMovieComponent implements OnInit, OnDestroy {
 
   constructor(
       private route: ActivatedRoute,

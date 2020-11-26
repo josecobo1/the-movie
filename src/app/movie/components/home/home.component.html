@@ -1,8 +1,8 @@
-<div class="box">
+
 
   <div class="container">
 
-    <mat-card *ngFor="let movie of movies">
+    <!-- <mat-card *ngFor="let movie of movies">
       <mat-card-header>
         <mat-card-title>{{ movie.room | room  }}</mat-card-title>
       </mat-card-header>
@@ -17,13 +17,27 @@
           {{ movie.title }}
         </p>
       </mat-card-content>
-    </mat-card>
+    </mat-card> -->
+
+    <div class="movie" *ngFor='let movie of movies'>
+
+      <a [routerLink]="['/movie/', movie.id ]">
+
+        <img src="{{ movie.poster }}">
+
+      </a>
+
+
+      <h3>{{ movie.title }}</h3>
+
+    </div>
+
 
 
 
   </div>
 
-</div>
+
 
 
 

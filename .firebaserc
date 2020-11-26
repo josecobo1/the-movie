@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "net-mind": {
+      "hosting": {
+        "the-movie": [
+          "net-mind"
+        ]
+      }
+    }
+  }
+}

@@ -2,12 +2,12 @@
 
   <div class="container">
 
-    <mat-card *ngFor="let movie of movies">
+    <mat-card *ngFor="let movie of moviesList | async">
       <mat-card-header>
         <mat-card-title>{{ movie.room | room  }}</mat-card-title>
       </mat-card-header>
 
-      <a [routerLink]="['/movie/', movie.id ]">
+      <a [routerLink]="['/movie/', movie.room ]">
         <img mat-card-image src="{{ movie.poster }}">
       </a>
 

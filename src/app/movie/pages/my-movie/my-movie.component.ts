@@ -17,15 +17,17 @@ export class MyMovieComponent implements OnInit {
       ) { }
 
   id: string;
+  movieList: Observable<Movie[]>;
   movie: Movie;
+
   private subscribe: Subscription;
+
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
-    this.subscribe = this.movieService.getMovie$(this.id).subscribe(movie => this.movie = movie);
-  }
 
-  ngOnDestroy(): void {
-    this.subscribe.unsubscribe();
-  }
+    // this.movieList = this.movieService.readOne$(this.route.snapshot.paramMap.get('id'));
+    // this.movie = this.movieList[0];
+    // console.log(this.movie);
 
-}
+
+    }
+  }

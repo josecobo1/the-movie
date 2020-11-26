@@ -1,5 +1,8 @@
 $img-background: './../../../../assets/img/pexels-pixabay-33129.jpg';
-
+html, body {
+  margin: 0;
+  padding: 0;
+}
 .container {
   // background-image: url($img-background);
   // background-repeat: no-repeat;

@@ -1,3 +1,4 @@
+import { Observable, Subscription } from 'rxjs';
 import { MovieService } from './../../services/movie.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -17,10 +18,14 @@ export class MyMovieComponent implements OnInit {
 
   id: string;
   movie: Movie;
-
+  private subscribe: Subscription;
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.movieService.getMovie$(this.id).subscribe(movie => this.movie = movie);
+    this.subscribe = this.movieService.getMovie$(this.id).subscribe(movie => this.movie = movie);
+  }
+
+  ngOnDestroy(): void {
+    this.subscribe.unsubscribe();
   }
 
 }

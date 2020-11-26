@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { MovieService } from './../../services/movie.service';
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../interfaces/movie';
@@ -10,6 +11,7 @@ import { Movie } from '../../interfaces/movie';
 export class HomeComponent implements OnInit {
 
   movies: Movie[];
+  private subsribe: Subscription;
 
   constructor(
     private movieService: MovieService
@@ -17,7 +19,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     // Cuándo tenemos que usar el .unsuscribe()¿?
-    this.movieService.getMovies$().subscribe(movies => this.movies = movies);
+    this.subsribe = this.movieService.getMovies$().subscribe(movies => this.movies = movies);
+  }
+
+  onOnDestroy(): void {
+    this.subsribe.unsubscribe();
   }
 
 }

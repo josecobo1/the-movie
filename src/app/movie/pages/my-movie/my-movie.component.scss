@@ -1,57 +1,77 @@
-.top {
-  margin-left: 7%;
-  h2 {
-    display: inline;
-    color: grey;
-  }
+$img-background: "./../../../../assets/img/movie2_low.jpg" ;
 
-  h1 {
-    display: inline;
-    margin-left: 20px;
-    border: solid yellow 2px;
-  }
-}
+.card{
 
-.container {
-  display: flex;
-  flex-direction: wrap;
-  justify-content: space-evenly;
-  margin-top: 5%;
-  border: solid red 1px;
 
-  .right {
-    border: solid green 1px;
-    width: 40%;
+  background-image: url($img-background);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
 
-    .feature {
-      display: block;
+  padding: 20px;
 
-      .feature-title {
-        color: grey;
-        float: left;
-        margin-right: 5px;
+
+
+  mat-card{
+
+    width: 70%;
+    margin: auto;
+
+
+
+    .container {
+      display: flex;
+      flex-direction: wrap;
+      justify-content: center;
+
+
+
+      .right {
+
+
+
+        .feature{
+
+          display: flex;
+
+
+          .feature-title{
+            margin-right: 10px;
+            font-weight: bold;
+          }
+
+        }
+
+        }
+
+      .left {
+
+        width: 100%;
+
+        img {
+          width: 80%;
+          object-fit: cover;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
       }
-    }
-  }
 
-  .left {
-    border: solid blue 1px;
-    width: 40%;
-    img {
-      max-width: 60%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+
     }
 
   }
 
 
+  button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+
 }
 
-button {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 20px;
-}
+

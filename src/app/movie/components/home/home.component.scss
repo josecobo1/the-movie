@@ -1,11 +1,12 @@
 $img-background: "./../../../../assets/img/pexels-pixabay-33129.jpg";
 
+
 .container {
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: baseline;
+  padding-top: 5%;
 
   background-image: url($img-background);
   background-repeat: no-repeat;
@@ -13,32 +14,35 @@ $img-background: "./../../../../assets/img/pexels-pixabay-33129.jpg";
   background-size: cover;
   background-attachment: scroll;
 
-  .movie{
+    mat-card {
+      max-width: 25%;
+      margin: 5px;
 
-    display: inline;
-    margin: 10px;
+      img {
+        height: 70%;
+      }
 
-    border: solid 2px red;
-
-    width: 35%;
-
-    text-align: center;
+      mat-card-content{
 
 
-    img {
+        ul {
+          width: 100%;
+          margin: auto;
 
-      margin: 3%;
-      display: inline;
-      width: 60%;
-      border: solid 2px blue;
+          li {
+            list-style-type: none;
+
+          }
+        }
+      }
+
+      mat-card-actions {
+        text-align: center;
+      }
+
+
+
 
     }
-
-    h3{
-      display: block;
-      background-color: white;
-    }
-
-  }
 
 }

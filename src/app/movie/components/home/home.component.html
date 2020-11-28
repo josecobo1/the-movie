@@ -1,43 +1,36 @@
+<div class="container">
+
+  <mat-card *ngFor="let movie of movies">
+
+    <mat-card-header>
+      <mat-card-title>
+        {{ movie.title }}
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{ movie.room | room }}
+      </mat-card-subtitle>
+    </mat-card-header>
 
 
-  <div class="container">
+    <img mat-card-image src="{{ movie.poster }}" />
 
-    <!-- <mat-card *ngFor="let movie of movies">
-      <mat-card-header>
-        <mat-card-title>{{ movie.room | room  }}</mat-card-title>
-      </mat-card-header>
-
-      <a [routerLink]="['/movie/', movie.id ]">
-        <img mat-card-image src="{{ movie.poster }}">
-      </a>
-
-
-      <mat-card-content>
-        <p>
-          {{ movie.title }}
-        </p>
-      </mat-card-content>
-    </mat-card> -->
-
-    <div class="movie" *ngFor='let movie of movies'>
-
-      <a [routerLink]="['/movie/', movie.id ]">
-
-        <img src="{{ movie.poster }}">
-
-      </a>
+    <mat-card-content>
+      <ul>
+        Schedule:
+        <li *ngFor="let hour of movie.hours">
+          {{ hour }}
+        </li>
+      </ul>
+    </mat-card-content>
 
 
-      <h3>{{ movie.title }}</h3>
-
-    </div>
-
-
-
-
-  </div>
+    <mat-card-actions>
+      <button mat-raised-button [routerLink]="['/movie/', movie.id]">
+        Go to room {{ movie.id }}
+      </button>
+    </mat-card-actions>
 
 
+  </mat-card>
 
-
-
+</div>

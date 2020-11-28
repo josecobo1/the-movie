@@ -1,44 +1,74 @@
-<div class="top">
-  <h2>{{ movie?.room | room}}</h2>
-  <h1>{{ movie?.title }}</h1>
+<div class="card">
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-subtitle>{{ movie?.id | room }}</mat-card-subtitle>
+      <mat-card-title>{{ movie?.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="container">
+
+
+      <div class="left">
+        <img src='{{ movie?.poster }}'>
+      </div>
+
+      <div class="right">
+
+        <div class="feature">
+          <p class="feature-title">Genres</p>
+          <div class="features">
+            <p *ngFor='let genre of movie?.genres'>{{ genre }}</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title">Year</p>
+          <div class="features">
+            <p>{{ movie?.year }}</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title">Director</p>
+          <div class="features">
+            <p>{{ movie?.director }}</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title">Actors</p>
+          <div class="features">
+            <p *ngFor='let actor of movie?.actors'>{{ actor }}</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title">Schedule</p>
+          <div class="features">
+            <p *ngFor='let hour of movie?.hours'>{{ hour }}</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <p class="feature-title">Synopsis</p>
+          <div class="features">
+            <p>{{ movie?.synopsis }}</p>
+          </div>
+        </div>
+
+
+      </div>
+
+      </div>
+
+    </mat-card-content>
+  </mat-card>
+
+
+
+<button mat-raised-button [routerLink]="['/home']">Home</button>
+
 </div>
 
-  <div class="container">
 
-
-  <div class="left">
-    <img src="{{ movie?.poster }}">
-  </div>
-
-  <div class="right">
-
-    <div class="feature">
-      <p class="feature-title">Genres: </p> <p>{{ movie?.genres }}</p>
-    </div>
-
-    <div class="feature">
-      <p class="feature-title">Year: </p> <p>{{ movie?.year }}</p>
-    </div>
-
-    <div class="feature">
-      <p class="feature-title">Director: </p> <p>{{ movie?.director }}</p>
-    </div>
-
-    <div class="feature">
-      <p class="feature-title">Actors: </p> <p>{{ movie?.actors }}</p>
-    </div>
-
-    <div class="feature">
-      <p class="feature-title">Schedule: </p> <p>{{ movie?.hours }}</p>
-    </div>
-
-    <div class="feature">
-      <p class="feature-title">Synopsis: </p> <p>{{ movie?.synopsis }}</p>
-    </div>
-
-  </div>
-
-
-</div>
-
-<button mat-raised-button [routerLink]="['/home']">Inicio</button>

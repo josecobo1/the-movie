@@ -24,7 +24,7 @@ export class MovieService {
   // Recuper 1 pelicula por id de la API
   getMovie$(id: string): Observable<Movie> {
 
-    return this.http.get<Movie>(`${this._url}${id}`);
+    return this.http.get<Movie>(`${this._url}/${id}`);
 
   }
 
